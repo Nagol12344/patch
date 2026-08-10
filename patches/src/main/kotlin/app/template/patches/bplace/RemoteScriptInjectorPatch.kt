@@ -6,6 +6,8 @@ import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
 import app.template.patches.bplace.WebViewClientFingerprint
 
+private const val EXTENSION_CLASS = "Lapp/template/extension/ScriptHook;"
+
 val javascriptPatch = bytecodePatch(
     name = "Remote script injector",
     description = "Hooks WebView to inject integrity-checked userscripts.",
@@ -20,12 +22,11 @@ val javascriptPatch = bytecodePatch(
 
     execute {
         val method = WebViewClientFingerprint.method
-
         method.addInstructions(
             0,
             """
-                move-object/from16 v0, p0
-                invoke-static {v0}, Lapp/template/patch/ScriptHook;->hookWebView(Landroid/webkit/WebView;)V
+            move-object/from16 v0, p0
+            invoke-static {v0}, $EXTENSION_CLASS;->hookWebView(Landroid/webkit/WebView;)V
             """.trimIndent()
         )
     }

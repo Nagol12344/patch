@@ -27,7 +27,7 @@ dependencies {
     compileOnly(libs.gson)
     patchListGeneratorClasspath(libs.gson)
 
-    implementation(project(":extensions:extension"))
+    // implementation(project(":extensions:extension"))
 }
 
 tasks {
