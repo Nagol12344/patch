@@ -1,8 +1,9 @@
 package app.template.patches.bplace
 
-import dev.revanced.patcher.annotation.Patch
-import dev.revanced.patcher.patch.ResourcePatch
-import dev.revanced.patcher.data.ResourceContext
+// Utilizing the local project template architecture namespaces
+import app.morphe.patches.annotation.Patch
+import app.morphe.patches.patch.ResourcePatch
+import app.morphe.patches.data.ResourceContext
 import org.w3c.dom.Document
 import org.w3c.dom.Element
 
