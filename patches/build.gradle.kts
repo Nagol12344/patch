@@ -26,6 +26,7 @@ val patchListGeneratorClasspath = configurations.create("patchListGeneratorClass
 dependencies {
     compileOnly(libs.gson)
     patchListGeneratorClasspath(libs.gson)
+    implementation(project(":extensions:webview-hook"))
 }
 
 tasks {
