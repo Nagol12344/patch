@@ -1,22 +1,19 @@
 package app.template.patches.bplace
 
-import app.morphe.patcher.patch.Patch
-import app.morphe.patcher.patch.ResourcePatchContext
+import app.morphe.patcher.patch.resourcePatch
 import org.w3c.dom.Element
 
-object RemoveCameraPermissions {
-    val patch = Patch<ResourcePatchContext>(
-        name = "Remove Camera Requirements",
-        description = "Strips camera permissions and features from the manifest.",
-        default = true,
-        dependencies = emptySet(),
-        compatibility = null,
-        options = emptySet(),
-        executeBlock = { context ->
-            val manifest = context.manifest
-            val root = manifest.documentElement
+@Suppress("unused")
+val removeCameraPermissionsPatch = resourcePatch(
+    name = "Remove Camera Requirements",
+    description = "Removes camera permissions and hardware requirements from the manifest.",
+    use = true,
+) {
+    execute {
+        document("AndroidManifest.xml").use { document ->
+            val root = document.documentElement
 
-            // Remove CAMERA permission.
+            // Remove android.permission.CAMERA
             val permissions = root.getElementsByTagName("uses-permission")
             for (i in (permissions.length - 1) downTo 0) {
                 val element = permissions.item(i) as? Element ?: continue
@@ -24,7 +21,7 @@ object RemoveCameraPermissions {
                 if (element.getAttribute("android:name") ==
                     "android.permission.CAMERA"
                 ) {
-                    root.removeChild(element)
+                    element.parentNode.removeChild(element)
                 }
             }
 
@@ -36,10 +33,9 @@ object RemoveCameraPermissions {
                 if (element.getAttribute("android:name") ==
                     "android.hardware.camera"
                 ) {
-                    root.removeChild(element)
+                    element.parentNode.removeChild(element)
                 }
             }
-        },
-        finalizeBlock = null
-    )
+        }
+    }
 }
