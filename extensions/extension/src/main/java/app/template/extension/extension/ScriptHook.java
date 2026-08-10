@@ -1,5 +1,23 @@
 package app.template.extension.extension;
 
+import java.util.concurrent.ExecutorService;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.io.InputStream;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.security.MessageDigest;
+import java.nio.charset.StandardCharsets;
+
 public class ScriptHook {
 
     // Point this at wherever you host your userscripts (a gist, your own server, etc).
