@@ -7,13 +7,11 @@ import org.w3c.dom.Element
 val removeCameraPermissionsPatch = resourcePatch(
     name = "Remove Camera Requirements",
     description = "Removes camera permissions and hardware requirements from the manifest.",
-    use = true,
 ) {
     execute {
         document("AndroidManifest.xml").use { document ->
             val root = document.documentElement
 
-            // Remove android.permission.CAMERA
             val permissions = root.getElementsByTagName("uses-permission")
             for (i in (permissions.length - 1) downTo 0) {
                 val element = permissions.item(i) as? Element ?: continue
@@ -25,7 +23,6 @@ val removeCameraPermissionsPatch = resourcePatch(
                 }
             }
 
-            // Remove camera hardware requirements.
             val features = root.getElementsByTagName("uses-feature")
             for (i in (features.length - 1) downTo 0) {
                 val element = features.item(i) as? Element ?: continue
