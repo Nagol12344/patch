@@ -1,6 +1,8 @@
-import app.morphe.patcher.annotation.Patch
-import app.morphe.patcher.resource.ResourcePatch
-import app.morphe.patcher.resource.ResourceContext
+package app.template.patches.bplace
+
+import dev.revanced.patcher.annotation.Patch
+import dev.revanced.patcher.patch.ResourcePatch
+import dev.revanced.patcher.data.ResourceContext
 import org.w3c.dom.Document
 import org.w3c.dom.Element
 
@@ -8,25 +10,25 @@ import org.w3c.dom.Element
     name = "Remove Camera Requirements",
     description = "Strips camera permissions and features from the manifest."
 )
-class StripCameraPatch : ResourcePatch() {
+class RemoveCameraPermissions : ResourcePatch() {
 
     override fun execute(context: ResourceContext) {
-        // Morphe exposes the parsed XML Document of the AndroidManifest
+        // Access the underlying manifest DOM document
         val manifestDoc: Document = context.manifest
         val root = manifestDoc.documentElement
 
-        // 1. Remove the <uses-permission android:name="android.permission.CAMERA"/>
+        // 1. Remove the camera permission node
         val permissions = root.getElementsByTagName("uses-permission")
-        for (i in 0 until permissions.length) {
+        for (i in (permissions.length - 1) downTo 0) {
             val item = permissions.item(i) as Element
             if (item.getAttribute("android:name") == "android.permission.CAMERA") {
                 root.removeChild(item)
             }
         }
 
-        // 2. Remove <uses-feature android:name="android.hardware.camera"/>
+        // 2. Remove the camera hardware requirement node
         val features = root.getElementsByTagName("uses-feature")
-        for (i in 0 until features.length) {
+        for (i in (features.length - 1) downTo 0) {
             val item = features.item(i) as Element
             if (item.getAttribute("android:name") == "android.hardware.camera") {
                 root.removeChild(item)
