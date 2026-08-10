@@ -17,6 +17,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.nio.charset.StandardCharsets;
+import android.graphics.Bitmap;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 
 public class ScriptHook {
 
