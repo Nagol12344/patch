@@ -6,6 +6,8 @@ import app.morphe.patcher.patch.bytecodePatch
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
+import com.android.tools.smali.dexlib2.Opcode
+import app.morphe.patcher.fieldAccess
 
 val removeCameraPermissionRequestPatch = bytecodePatch(
     name = "Remove unnecessary camera permission request",
