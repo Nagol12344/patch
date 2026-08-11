@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/Nagol12344/patch/compare/v1.2.1...v1.2.2) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* **maybe:** idfkatp ([58ce455](https://github.com/Nagol12344/patch/commit/58ce45541b79a8508c4cd776df612fd01c4747e8))
+
 ## [1.2.1](https://github.com/Nagol12344/patch/compare/v1.2.0...v1.2.1) (2026-08-10)
 
 ### 🐛 Bug Fixes
