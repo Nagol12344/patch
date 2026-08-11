@@ -1,3 +1,9 @@
+## [1.4.1](https://github.com/Nagol12344/patch/compare/v1.4.0...v1.4.1) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* **hope:** c ([79b64fa](https://github.com/Nagol12344/patch/commit/79b64fa964c05f81590dfc374c0599ac9481e37d))
+
 ## [1.4.0](https://github.com/Nagol12344/patch/compare/v1.3.0...v1.4.0) (2026-08-11)
 
 ### 🐛 Bug Fixes
