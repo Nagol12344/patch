@@ -16,11 +16,10 @@ object OnShowFileChooserFingerprint : Fingerprint(
         "Landroid/webkit/WebChromeClient\$FileChooserParams;"
     ),
     filters = listOf(
-        fieldAccess(
-            opcode = Opcode.SGET_BOOLEAN,
-            definingClass = "LA5/k;",
-            name = "z",
-            type = "Z"
+        app.morphe.patcher.string("android.permission.CAMERA"),
+        app.morphe.patcher.methodCall(
+            definingClass = "LS1/c;",
+            name = "checkSelfPermission"
         )
     )
 )

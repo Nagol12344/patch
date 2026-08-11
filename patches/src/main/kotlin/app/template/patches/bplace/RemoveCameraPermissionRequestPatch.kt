@@ -21,16 +21,15 @@ val removeCameraPermissionRequestPatch = bytecodePatch(
             targets = listOf(AppTarget(null), AppTarget("1.0.7"))
         ))
 
-    execute {
+ execute {
         OnShowFileChooserFingerprint.let {
             it.method.apply {
-                val insertIndex = it.instructionMatches.first().index
-                val register = getInstruction<OneRegisterInstruction>(insertIndex).registerA
+                // instructionMatches[1] = the methodCall match; the move-result follows immediately after
+                val checkCallIndex = it.instructionMatches[1].index
+                val moveResultIndex = checkCallIndex + 1
+                val register = getInstruction<OneRegisterInstruction>(moveResultIndex).registerA
 
-                replaceInstruction(
-                    insertIndex,
-                    "const/4 v$register, 0x0"
-                )
+                replaceInstruction(moveResultIndex, "const/4 v$register, 0x0")
             }
         }
     }
