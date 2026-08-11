@@ -1,3 +1,9 @@
+## [1.2.6](https://github.com/Nagol12344/patch/compare/v1.2.5...v1.2.6) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* **test:** test one at a time ([1d898a1](https://github.com/Nagol12344/patch/commit/1d898a12c4c596143f9786be82bb9566375c20f7))
+
 ## [1.2.5](https://github.com/Nagol12344/patch/compare/v1.2.4...v1.2.5) (2026-08-11)
 
 ### 🐛 Bug Fixes
