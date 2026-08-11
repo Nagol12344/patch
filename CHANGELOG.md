@@ -1,3 +1,9 @@
+## [1.2.4](https://github.com/Nagol12344/patch/compare/v1.2.3...v1.2.4) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* **webview:** change defining class to hopefully fix the fingerprint ([e74deb5](https://github.com/Nagol12344/patch/commit/e74deb5ecd9b6e153e7429256cbe3565a79972cd))
+
 ## [1.2.3](https://github.com/Nagol12344/patch/compare/v1.2.2...v1.2.3) (2026-08-11)
 
 ### 🐛 Bug Fixes
