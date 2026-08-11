@@ -4,7 +4,6 @@ import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.AppTarget
 import app.morphe.patcher.patch.Compatibility
-import app.template.patches.bplace.WebViewClientFingerprint
 
 private const val EXTENSION_CLASS = "Lapp/template/extension/ScriptHook;"
 
