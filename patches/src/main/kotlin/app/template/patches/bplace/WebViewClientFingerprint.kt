@@ -1,9 +1,9 @@
 // WebViewClientFingerprint.kt
 package app.template.patches.bplace
 
-import app.morphe.patcher.MethodFingerprint
+import app.morphe.patcher.Fingerprint
 
-object OnPageStartedFingerprint : MethodFingerprint(
+object OnPageStartedFingerprint : Fingerprint(
     returnType = "V",
     parameters = listOf("Landroid/webkit/WebView;", "Ljava/lang/String;", "Landroid/graphics/Bitmap;"),
     customFingerprint = { method, _ ->
