@@ -14,5 +14,13 @@ object OnShowFileChooserFingerprint : Fingerprint(
         "Landroid/webkit/WebView;",
         "Landroid/webkit/ValueCallback;",
         "Landroid/webkit/WebChromeClient\$FileChooserParams;"
+    ),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.SGET_BOOLEAN,
+            definingClass = "LA5/k;",
+            name = "z",
+            type = "Z"
+        )
     )
 )

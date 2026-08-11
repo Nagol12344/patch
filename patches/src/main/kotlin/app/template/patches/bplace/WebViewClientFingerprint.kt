@@ -9,12 +9,4 @@ object WebViewClientFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC),
     returnType = "V",
     parameters = listOf("Landroid/webkit/WebView;", "Ljava/lang/String;", "Landroid/graphics/Bitmap;"),
-    filters = listOf(
-        fieldAccess(
-            opcode = Opcode.SGET_BOOLEAN,
-            definingClass = "LA5/k;",
-            name = "z",
-            type = "Z"
-        )
-    )
 )
