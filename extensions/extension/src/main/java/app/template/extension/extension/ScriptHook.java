@@ -11,7 +11,8 @@ public class ScriptHook {
         "  document.querySelectorAll('input[type=\"file\"][capture]').forEach(function(el){" +
         "    el.removeAttribute('capture');" +
         "  });" +
-        "}).observe(document.body, {childList:true, subtree:true});";
+        "}).observe(document.body, {childList:true, subtree:true});"+
+        "alert(1);";
 
     public static void hookWebView(WebView view) {
         view.evaluateJavascript(FIX_SCRIPT, null);
