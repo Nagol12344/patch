@@ -10,7 +10,12 @@ val fixFilePickerPatch = bytecodePatch(
     description = "Strips the capture attribute from file inputs so the file picker doesn't request camera permission.",
     default = true
 ) {
-    compatibleWith() // fill in package/version
+    compatibleWith(Compatibility(
+            name = "Better Place",
+            packageName = "com.bplace",
+            appIconColor = 0x2196f2,
+            targets = listOf(AppTarget(null), AppTarget("1.0.7"))
+        )) // fill in package/version
     extendWith("extensions/extension.mpe")
 
     execute {
