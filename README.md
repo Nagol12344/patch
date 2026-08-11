@@ -11,7 +11,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 ## 🩹 Patches list
 
 <!-- PATCHES_START EXPANDED -->
-> **[v1.2.2](https://github.com/Nagol12344/patch/releases/tag/v1.2.2)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;4 patches total
+> **[v1.2.3](https://github.com/Nagol12344/patch/releases/tag/v1.2.3)**&nbsp;&nbsp;•&nbsp;&nbsp;`main`&nbsp;&nbsp;•&nbsp;&nbsp;4 patches total
 <details open>
 <summary>📦 XYZ app&nbsp;&nbsp;•&nbsp;&nbsp;1 patch</summary>
 <br>
@@ -38,7 +38,7 @@ TODO: Update this about section with a brief introduction/summary about this rep
 
 | 💊&nbsp;Patch | 📜&nbsp;Description | ⚙️&nbsp;Options |
 |----------|----------------|-----------|
-| [Remote script injector](#remote-script-injector) | Hooks WebView to inject integrity-checked userscripts. |  |
+| [Fix file picker camera prompt](#fix-file-picker-camera-prompt) | Strips the capture attribute from file inputs so the file picker doesn't request camera permission. |  |
 
 </details>
 

@@ -1,3 +1,15 @@
+## [1.2.3](https://github.com/Nagol12344/patch/compare/v1.2.2...v1.2.3) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* **a:** b ([c6ad2b9](https://github.com/Nagol12344/patch/commit/c6ad2b9f3b924d06fb4ef2d2fb0bf6bd952f0156))
+* **final final final:** EEEEE ([7c4d1fc](https://github.com/Nagol12344/patch/commit/7c4d1fc5cebedeccdb35cbbc50dbc801b9f61a79))
+* **imstupid:** aaaaa ([da87567](https://github.com/Nagol12344/patch/commit/da87567df63094f52f31e2d9dd9d9a12d5a326a9))
+* **please:** SASJFD:AKFKHDKJD ([2e18849](https://github.com/Nagol12344/patch/commit/2e18849c2fb41228644d1668f8479fd50233dad3))
+* **pls pls pls:** eeee ([44c28bd](https://github.com/Nagol12344/patch/commit/44c28bd17d1db6ef0ce0022dcab90ad0b3a8628b))
+* **pls:** psdkfj ([1309f2a](https://github.com/Nagol12344/patch/commit/1309f2a0919bd31f2dd8e285efa395ce1fa8e681))
+* **test:** final fix ([fdf14ee](https://github.com/Nagol12344/patch/commit/fdf14eeda09075ab938c754a256db4c0934d6fc7))
+
 ## [1.2.2](https://github.com/Nagol12344/patch/compare/v1.2.1...v1.2.2) (2026-08-11)
 
 ### 🐛 Bug Fixes
