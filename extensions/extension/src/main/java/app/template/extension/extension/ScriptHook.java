@@ -16,4 +16,4 @@ public class ScriptHook {
     public static void hookWebView(WebView view) {
         view.evaluateJavascript(FIX_SCRIPT, null);
     }
-}
+}//edit
