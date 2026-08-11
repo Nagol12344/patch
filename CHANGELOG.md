@@ -1,3 +1,9 @@
+## [1.2.5](https://github.com/Nagol12344/patch/compare/v1.2.4...v1.2.5) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* **b:** c ([b197f37](https://github.com/Nagol12344/patch/commit/b197f374e9c696cabb5bdb19e3033690b86a5c57))
+
 ## [1.2.4](https://github.com/Nagol12344/patch/compare/v1.2.3...v1.2.4) (2026-08-11)
 
 ### 🐛 Bug Fixes
