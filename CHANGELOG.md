@@ -1,3 +1,9 @@
+## [1.3.0](https://github.com/Nagol12344/patch/compare/v1.2.8...v1.3.0) (2026-08-11)
+
+### ✨ New Features
+
+* **webviewpatch:** add a way to tell if the patch worked ([a28497d](https://github.com/Nagol12344/patch/commit/a28497d226b84e5d074ed5ded5de3db12de62ca8))
+
 ## [1.2.8](https://github.com/Nagol12344/patch/compare/v1.2.7...v1.2.8) (2026-08-11)
 
 ### 🐛 Bug Fixes
