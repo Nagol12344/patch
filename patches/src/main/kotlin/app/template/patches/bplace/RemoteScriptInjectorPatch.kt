@@ -26,7 +26,7 @@ val fixFilePickerPatch = bytecodePatch(
             0,
             """
             move-object/from16 v0, p1
-            invoke-static {v0}, $EXTENSION_CLASS;->hookWebView(Landroid/webkit/WebView;)V
+            invoke-static {v0}, $EXTENSION_CLASS->hookWebView(Landroid/webkit/WebView;)V
             """.trimIndent()
         )
     }
