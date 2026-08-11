@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-08-11T18:04:39",
-  "description": "## [1.2.7](https://github.com/Nagol12344/patch/compare/v1.2.6...v1.2.7) (2026-08-11)\n\n### 🐛 Bug Fixes\n\n* **new class:** please ([179736b](https://github.com/Nagol12344/patch/commit/179736b146f33fd8ace70892697da24e41036a90))",
-  "download_url": "https://github.com/Nagol12344/patch/releases/download/v1.2.7/patches-1.2.7.mpp",
+  "created_at": "2026-08-11T18:15:41",
+  "description": "## [1.2.8](https://github.com/Nagol12344/patch/compare/v1.2.7...v1.2.8) (2026-08-11)\n\n### 🐛 Bug Fixes\n\n* **whoops:** huh ([a1b66eb](https://github.com/Nagol12344/patch/commit/a1b66eb871a9f1191a4127a7647dd188e2d9aa74))",
+  "download_url": "https://github.com/Nagol12344/patch/releases/download/v1.2.8/patches-1.2.8.mpp",
   "signature_download_url": "",
-  "version": "1.2.7"
+  "version": "1.2.8"
 }

@@ -1,3 +1,9 @@
+## [1.2.8](https://github.com/Nagol12344/patch/compare/v1.2.7...v1.2.8) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* **whoops:** huh ([a1b66eb](https://github.com/Nagol12344/patch/commit/a1b66eb871a9f1191a4127a7647dd188e2d9aa74))
+
 ## [1.2.7](https://github.com/Nagol12344/patch/compare/v1.2.6...v1.2.7) (2026-08-11)
 
 ### 🐛 Bug Fixes
