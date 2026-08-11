@@ -1,9 +1,9 @@
 package app.template.patches.bplace
 
+import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
-import app.morphe.patcher.patch.AppTarget
-import app.morphe.patcher.patch.Compatibility
+import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 
 val removeCameraPermissionRequestPatch = bytecodePatch(
     name = "Remove unnecessary camera permission request",
@@ -18,12 +18,16 @@ val removeCameraPermissionRequestPatch = bytecodePatch(
         ))
 
     execute {
-        val method = OnShowFileChooserFingerprint.method
-        val targetIndex = method.instructions.indexOfFirst {
-            it.toString().contains("LA5/k;->z:Z")
-        }
-        require(targetIndex != -1) { "Could not find LA5/k;->z:Z instruction" }
+        OnShowFileChooserFingerprint.let {
+            it.method.apply {
+                val insertIndex = it.instructionMatches.first().index
+                val register = getInstruction<OneRegisterInstruction>(insertIndex).registerA
 
-        method.replaceInstruction(targetIndex, "const/4 p3, 0x0")
+                replaceInstruction(
+                    insertIndex,
+                    "const/4 v$register, 0x0"
+                )
+            }
+        }
     }
 }
