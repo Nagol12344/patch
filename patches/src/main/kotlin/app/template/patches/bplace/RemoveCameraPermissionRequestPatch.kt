@@ -2,6 +2,8 @@ package app.template.patches.bplace
 
 import app.morphe.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.patch.AppTarget
+import app.morphe.patcher.patch.Compatibility
 
 val removeCameraPermissionRequestPatch = bytecodePatch(
     name = "Remove unnecessary camera permission request",
