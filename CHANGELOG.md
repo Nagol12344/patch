@@ -1,3 +1,9 @@
+## [1.2.7](https://github.com/Nagol12344/patch/compare/v1.2.6...v1.2.7) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* **new class:** please ([179736b](https://github.com/Nagol12344/patch/commit/179736b146f33fd8ace70892697da24e41036a90))
+
 ## [1.2.6](https://github.com/Nagol12344/patch/compare/v1.2.5...v1.2.6) (2026-08-11)
 
 ### 🐛 Bug Fixes
