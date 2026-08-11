@@ -1,3 +1,16 @@
+## [1.4.0](https://github.com/Nagol12344/patch/compare/v1.3.0...v1.4.0) (2026-08-11)
+
+### 🐛 Bug Fixes
+
+* **a:** forgot some imports ([1867e01](https://github.com/Nagol12344/patch/commit/1867e01c7b69fb43d629bda55771fe09de647c6d))
+* **build:** whoops ([4c1e257](https://github.com/Nagol12344/patch/commit/4c1e257ba2a13506e91aea76da7d3cd2c6ea9d27))
+* **missed some more:** whoops ([b35095c](https://github.com/Nagol12344/patch/commit/b35095c3f37be8c1bb2577783f69da38a5785cc9))
+* **stupid:** aaaaaaa ([bf3f103](https://github.com/Nagol12344/patch/commit/bf3f1033d60b456e1525cf00f55a1b0de7799552))
+
+### ✨ New Features
+
+* **remove camera perm from file picker:** a ([8a7fdab](https://github.com/Nagol12344/patch/commit/8a7fdab9542367179725e9e99eb691d56344b2b7))
+
 ## [1.3.0](https://github.com/Nagol12344/patch/compare/v1.2.8...v1.3.0) (2026-08-11)
 
 ### ✨ New Features
