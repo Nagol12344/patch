@@ -17,16 +17,34 @@ android {
 val charityFrameworkDir = rootProject.layout.projectDirectory.dir("CharityFramework-Bplace")
 
 // Builds the mobile framework bundle (dist/CharityFramework.mobile.js).
+// Runs a dependency install first so CI checkouts (no node_modules, and
+// possibly no pnpm/bun at all) can build. Runner detection: pnpm -> bun ->
+// `npx --yes pnpm@<version>` (npx is available wherever npm is). The npx
+// fallback is pinned to the same pnpm version used locally and to create
+// pnpm-lock.yaml; the latest pnpm enforces a minimum-release-age policy that
+// rejects freshly published lockfile entries. Installs with
+// --frozen-lockfile against the vendored pnpm-lock.yaml for reproducibility.
+val charityPnpmVersion = "10.13.1"
+
 val buildCharityFramework = tasks.register<Exec>("buildCharityFramework") {
     group = "charity"
-    description = "Builds the Charity Framework mobile bundle (pnpm, bun fallback)."
+    description = "Builds the Charity Framework mobile bundle (pnpm/bun/npx)."
     workingDir = charityFrameworkDir.asFile
     val runner = providers.exec {
-        commandLine("bash", "-lc", "command -v bun >/dev/null 2>&1 && echo bun || echo pnpm")
+        commandLine(
+            "bash", "-lc",
+            "command -v pnpm >/dev/null 2>&1 && echo pnpm || { command -v bun >/dev/null 2>&1 && echo bun || echo npx; }"
+        )
     }.standardOutput.asText.get().trim()
-    commandLine(if (runner == "bun") "bun" else "pnpm", "run", "build:mobile")
+    val pkg = mapOf(
+        "pnpm" to "pnpm",
+        "bun" to "bun",
+        "npx" to "npx --yes pnpm@$charityPnpmVersion"
+    ).getValue(runner)
+    commandLine("bash", "-lc", "$pkg install --frozen-lockfile && $pkg run build:mobile")
     inputs.dir(charityFrameworkDir.dir("packages"))
     inputs.file(charityFrameworkDir.file("package.json"))
+    inputs.file(charityFrameworkDir.file("pnpm-lock.yaml"))
     inputs.file(charityFrameworkDir.file("rollup.config.mjs"))
     outputs.file(charityFrameworkDir.file("dist/CharityFramework.mobile.js"))
 }
