@@ -1,6 +1,6 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "patches": [
     {
       "name": "Example Patch",
@@ -71,11 +71,36 @@
       "options": []
     },
     {
-      "name": "Invert light and dark theme colors",
-      "description": "Swaps the VALUES of paired light/dark theme color resources (same-file dark/light pairs, and values/ vs values-night/ counterparts) so the app's light and dark themes are effectively inverted. Resource names are never modified.",
-      "default": false,
+      "name": "Inject Charity Framework",
+      "description": "Embeds and runs the Charity Framework plugin loader on bplace.art pages (mobile GM shim + native fetch bridge).",
+      "default": true,
       "dependencies": [],
-      "compatiblePackages": null,
+      "compatiblePackages": [
+        {
+          "packageName": "com.bplace",
+          "name": "Better Place",
+          "description": null,
+          "apkFileType": null,
+          "appIconColor": "#2196F2",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": "1.0.7",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
       "options": []
     },
     {
