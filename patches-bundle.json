@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-09-23T04:06:59",
-  "description": "## [1.5.0](https://github.com/Nagol12344/patch/compare/v1.4.1...v1.5.0) (2026-09-23)\n\n### 🐛 Bug Fixes\n\n* **extension:** make buildCharityFramework work on CI runners ([56c4280](https://github.com/Nagol12344/patch/commit/56c4280139bf1e2279ec5f85a5b07994eb097d07))\n\n### ✨ New Features\n\n* **bplace:** inject Charity Framework into bplace WebView ([57429ad](https://github.com/Nagol12344/patch/commit/57429ad555cce9938cbc1aeda17458689b9d0c30))\n* vendor Charity Framework source into repo ([2a21dc9](https://github.com/Nagol12344/patch/commit/2a21dc923fc0fed9733d6d403b0d298c1705df9a))",
-  "download_url": "https://github.com/Nagol12344/patch/releases/download/v1.5.0/patches-1.5.0.mpp",
+  "created_at": "2026-09-24T00:07:14",
+  "description": "## [1.6.0](https://github.com/Nagol12344/patch/compare/v1.5.0...v1.6.0) (2026-09-24)\n\n### ✨ New Features\n\n* **why:** abcd ([e4398d5](https://github.com/Nagol12344/patch/commit/e4398d56788dcfbd87d18211f92f6837b4255d3a))",
+  "download_url": "https://github.com/Nagol12344/patch/releases/download/v1.6.0/patches-1.6.0.mpp",
   "signature_download_url": "",
-  "version": "1.5.0"
+  "version": "1.6.0"
 }
