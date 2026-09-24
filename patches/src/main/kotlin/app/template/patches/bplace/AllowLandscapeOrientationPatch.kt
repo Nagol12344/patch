@@ -20,24 +20,31 @@ val allowLandscapeOrientationPatch = bytecodePatch(
     ))
 
     execute {
-        val method = SplashScreenActivityFingerprint.method
-        val orientationCallIndices = method.implementation!!.instructions
-            .withIndex()
-            .filter { (_, instruction) ->
-                val reference = (instruction as? ReferenceInstruction)?.reference as? MethodReference
-                reference?.definingClass == "Landroid/app/Activity;" &&
-                    reference.name == "setRequestedOrientation" &&
-                    reference.parameterTypes == listOf("I") &&
-                    reference.returnType == "V"
+        val orientationMethods = listOf(
+            SplashScreenActivityFingerprint.method,
+            SplashScreenFingerprint.method,
+            MainActivityFingerprint.method
+        )
+
+        orientationMethods.forEach { method ->
+            val orientationCallIndices = method.implementation!!.instructions
+                .withIndex()
+                .filter { (_, instruction) ->
+                    val reference = (instruction as? ReferenceInstruction)?.reference as? MethodReference
+                    reference?.definingClass == "Landroid/app/Activity;" &&
+                        reference.name == "setRequestedOrientation" &&
+                        reference.parameterTypes == listOf("I") &&
+                        reference.returnType == "V"
+                }
+                .map { it.index }
+
+            check(orientationCallIndices.isNotEmpty()) {
+                "Expected an orientation call in ${method.definingClass}."
             }
-            .map { it.index }
 
-        check(orientationCallIndices.size == 3) {
-            "Expected 3 portrait orientation calls, found ${orientationCallIndices.size}."
-        }
-
-        orientationCallIndices.forEach { index ->
-            method.replaceInstruction(index, "nop")
+            orientationCallIndices.forEach { index ->
+                method.replaceInstruction(index, "nop")
+            }
         }
     }
 }

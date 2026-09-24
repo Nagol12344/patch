@@ -3,6 +3,39 @@
   "version": "1.5.0",
   "patches": [
     {
+      "name": "Allow landscape orientation",
+      "description": "Removes Better Place's portrait orientation lock so the app can rotate to landscape.",
+      "default": true,
+      "dependencies": [],
+      "compatiblePackages": [
+        {
+          "packageName": "com.bplace",
+          "name": "Better Place",
+          "description": null,
+          "apkFileType": null,
+          "appIconColor": "#2196F2",
+          "signatures": null,
+          "targets": [
+            {
+              "version": null,
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            },
+            {
+              "version": "1.0.7",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
       "name": "Example Patch",
       "description": "Example patch to start with.",
       "default": true,
@@ -39,7 +72,7 @@
     },
     {
       "name": "Fix file picker camera prompt",
-      "description": "Strips the capture attribute from file inputs so the file picker doesn't request camera permission.",
+      "description": "Strips the capture attribute and forces the native chooser to use gallery-only file inputs.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [
@@ -113,7 +146,7 @@
     },
     {
       "name": "Remove unnecessary camera permission request",
-      "description": "Prevents the file picker from proactively requesting CAMERA permission.",
+      "description": "Prevents the file picker from requesting CAMERA permission or forcing camera capture.",
       "default": true,
       "dependencies": [],
       "compatiblePackages": [

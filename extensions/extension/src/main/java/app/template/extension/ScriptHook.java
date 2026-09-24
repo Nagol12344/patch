@@ -28,14 +28,26 @@ import java.util.Map;
  */
 public class ScriptHook {
     private static final String FIX_SCRIPT =
-        "document.querySelectorAll('input[type=\"file\"]').forEach(function(el){" +
-        "  el.removeAttribute('capture');" +
-        "});" +
-        "new MutationObserver(function(){" +
+        "(function(){" +
+        "if(window.__bplaceFileInputFixInstalled){return;}" +
+        "window.__bplaceFileInputFixInstalled=true;" +
+        "var stripCapture=function(){" +
         "  document.querySelectorAll('input[type=\"file\"][capture]').forEach(function(el){" +
         "    el.removeAttribute('capture');" +
         "  });" +
-        "}).observe(document.body, {childList:true, subtree:true});";
+        "};" +
+        "var install=function(){" +
+        "  stripCapture();" +
+        "  if(document.documentElement&&!window.__bplaceFileInputFixObserver){" +
+        "    window.__bplaceFileInputFixObserver=new MutationObserver(stripCapture);" +
+        "    window.__bplaceFileInputFixObserver.observe(document.documentElement," +
+        "      {childList:true,subtree:true,attributes:true,attributeFilter:['capture']});" +
+        "  }" +
+        "};" +
+        "if(document.documentElement){install();}" +
+        "else{document.addEventListener('readystatechange',install,{once:true});" +
+        "     document.addEventListener('DOMContentLoaded',install,{once:true});}" +
+        "})();";
 
     // Idempotency guard: onPageStarted can fire more than once for a page, and
     // evaluating the bundle twice would double-run the framework. A fresh

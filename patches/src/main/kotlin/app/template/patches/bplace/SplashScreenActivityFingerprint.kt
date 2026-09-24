@@ -21,3 +21,37 @@ object SplashScreenActivityFingerprint : Fingerprint(
         )
     )
 )
+
+object SplashScreenFingerprint : Fingerprint(
+    definingClass = "Lcom/bplace/SplashScreen;",
+    name = "onCreate",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "V",
+    parameters = listOf("Landroid/os/Bundle;"),
+    filters = listOf(
+        string("Mobile"),
+        methodCall(
+            definingClass = "Landroid/app/Activity;",
+            name = "setRequestedOrientation",
+            parameters = listOf("I"),
+            returnType = "V"
+        )
+    )
+)
+
+object MainActivityFingerprint : Fingerprint(
+    definingClass = "Lcom/bplace/MainActivity;",
+    name = "onCreate",
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "V",
+    parameters = listOf("Landroid/os/Bundle;"),
+    filters = listOf(
+        string("Mobile"),
+        methodCall(
+            definingClass = "Landroid/app/Activity;",
+            name = "setRequestedOrientation",
+            parameters = listOf("I"),
+            returnType = "V"
+        )
+    )
+)
