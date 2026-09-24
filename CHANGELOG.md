@@ -1,3 +1,9 @@
+## [1.6.0](https://github.com/Nagol12344/patch/compare/v1.5.0...v1.6.0) (2026-09-24)
+
+### ✨ New Features
+
+* **why:** abcd ([e4398d5](https://github.com/Nagol12344/patch/commit/e4398d56788dcfbd87d18211f92f6837b4255d3a))
+
 ## [1.5.0](https://github.com/Nagol12344/patch/compare/v1.4.1...v1.5.0) (2026-09-23)
 
 ### 🐛 Bug Fixes
