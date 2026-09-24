@@ -1,3 +1,9 @@
+## [1.7.0](https://github.com/Nagol12344/patch/compare/v1.6.0...v1.7.0) (2026-09-24)
+
+### ✨ New Features
+
+* **fix:** totally how these commit messages should work ([9cb03db](https://github.com/Nagol12344/patch/commit/9cb03db5c25f14e5cac12221065885d46e94cf00))
+
 ## [1.6.0](https://github.com/Nagol12344/patch/compare/v1.5.0...v1.6.0) (2026-09-24)
 
 ### ✨ New Features
